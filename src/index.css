@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.tooltip .tipp {
+    --tooltipScale: 0;
+    content: attr(data-info);
+    position: absolute;
+    top: -150%;
+    left: 0;
+    transform: scale(var(--tooltipScale));
+    transform-origin: bottom left;
+    transition: 0.5s transform;
+    z-index: 10;
+    background: #2a2a2a;
+    padding: 0.25rem 1rem;
+    border-radius: 8px;
+    color: whitesmoke;
+    display: none;
+}
+
+.tooltip:hover .tipp {
+    --tooltipScale: 1;
+    display: block;
+}
