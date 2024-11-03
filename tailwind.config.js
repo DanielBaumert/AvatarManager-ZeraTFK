@@ -4,7 +4,7 @@ const { visitEachChild } = require('typescript');
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{html,tsx}"
+    "./src/**/*.{html,tsx,css}"
   ],
   theme: {
     tooltip: { 

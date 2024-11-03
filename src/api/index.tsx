@@ -6,26 +6,28 @@ type Gender = "Male" | "Female";
 
 export type Avatar = {
     title: string;
-    skinColor: string;
-    expPoints: number;
-    gender: Gender;
-    patreon: number | undefined;
-    mainAvatar: string,
-    gold: number,
-    brMarken: number,
+    skinColor: string; 
+    expPoints: number; 
+    gender: Gender; 
+
+    patreon: number | undefined; // 12
+    mainAvatar: string, // 13
+    gold: number, // 15
+    brMarken: number, // 16
     avatarLevel: number,
 } & Ausstattung
 
 export type Ausstattung = {
-    itemIDList: InventoryItem[],
-    lWeapon: number;
-    rWeapon: number;
-    armor: number;
-    headTop: number;
-    headFront: number;
-    headHair: number;
-    shoes: number;
-    back: number;
+    lWeapon: number; // 4
+    rWeapon: number; // 5
+    armor: number;   // 6
+    headTop: number; // 7
+    headFront: number; // 8
+    headHair: number; // 9
+    shoes: number; // 10
+    back: number; // 11
+
+    itemIDList: InventoryItem[], // 14
 }
 
 const EP_TABLE = [
@@ -41,8 +43,6 @@ export const getAvatarLevel = (exp: number): number => {
     }
     return level;
 }
-
-// "var_fld_1=facebamm_1&var_fld_2=&var_fld_3=White&var_fld_4=23679&var_fld_5=9517&var_fld_7=expPoints&var_fld_8=Male&var_fld_20=I88|1I132|1I46|1I12|1I119|1I118|2I105|2I130|1I70|3I112|1I125|2I11|1I
 
 
 const parseAvatar = (data: string): Avatar => {
